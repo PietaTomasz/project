@@ -13,26 +13,23 @@ body, html {
   font-size: 10px;
 }
 
-section, header, main, footer {
-  border: 1px solid #000;
-  margin: 2rem 0;
+section, main, footer {
+  margin-bottom: 2rem;
 }
 
 .nav {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 25% 25% (1fr)[5];
-      grid-template-columns: 25% 25% repeat(5, 1fr);
-  grid-column-gap: 1rem;
-  justify-items: start;
-  padding: 3rem;
-  font-size: 1.5rem;
+  -ms-grid-columns: 50% (1fr)[5];
+      grid-template-columns: 50% repeat(5, 1fr);
+  grid-column-gap: 0.8rem;
+  font-size: 1.3vh;
 }
 
 .logo {
-  background: yellow;
   -ms-grid-column-align: end;
       justify-self: end;
+  font-size: 2.5rem;
 }
 
 .center {
@@ -43,10 +40,18 @@ li {
   color: #464646;
   list-style-type: none;
   border: 1px solid #000;
+  line-height: 7rem;
+  padding: 10px;
 }
 
-.bold {
+li:hover, li:nth-child(2), li:not(first-child) {
+  color: white;
+  background-color: #ff6600;
+}
+
+.title {
   font-weight: 700;
+  font-size: 3rem;
 }
 
 .upper {
@@ -63,12 +68,12 @@ h1, h2 {
 
 h2 {
   font-weight: normal;
-  font-size: 5rem;
+  font-size: 3vw;
 }
 
 h1 {
   color: #ff6600;
-  font-size: 10rem;
+  font-size: 6vw;
 }
 
 .one {

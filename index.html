@@ -8,7 +8,7 @@
   <title>Charasim.com</title>
 </head>
 <body>
-  <header>
+  <header class="notsticky">
     <nav class="nav">
       <div class="logo">
         <a title="Charasim.com - Tworzenie, Projektowanie, Pozycjonowanie Stron Internetowych Sosnowiec" href=index.html>
@@ -27,10 +27,19 @@
     </nav>
   </header>
   <main>
-
     <section class="one">
+      
       <h2>Idealna strona dla Twojej Firmy</h2>
       <h1>tania, schludna, perfekcyjna</h1>
+
+      <div id="slideshow">
+          <div>
+            <img src="./img/slide01.png"">
+          </div>
+          <div>
+            <img src="./img/slide02.png">
+          </div>
+       </div>
 
     </section>
 
@@ -73,7 +82,7 @@
               Gwarancja i Pomoc Techniczna
           </h3>
           <p class="info">
-              Nasze strony obejmujemy półroczną gwarancją oraz udzielamy bezpłatnych poradz zakresu ich obsługi. Można na nas liczyć.
+              Nasze strony obejmujemy półroczną gwarancją oraz udzielamy bezpłatnych porad z zakresu ich obsługi. Można na nas liczyć.
           </p>
         </div>
       </div>
@@ -109,7 +118,7 @@
         </div>
       </div>
       <div></div>
-      <div class="more">
+      <div class="button">
         więcej
         <img src="/img/arrow.png" alt="" srcset="">
       </div>
@@ -175,14 +184,72 @@
       </div>
     </section>
     <section class="contact">
-      
+      <div class="form">
+        <h2 class="title orange left">
+          Kontakt
+        </h2>
+        <form action="/form.php">
+          <input type="text" name="firstname" value="Imię i Nazwisko">
+          <br>
+          <input type="text" name="lastname" value="Adres Email">
+          <br>
+          <textarea rows="8" cols="50">Twoja wiadomość</textarea>
+          <br>
+          <br>
+          <input type="submit" value="Wyślij" class="button center"><br>
+          <br>
+        </form> 
+      </div>
+      <div class="map">
+        <img src="./img/map.png" alt="Mapa Google" sizes="" srcset="">
+      </div>
     </section>
-
+    <section class="clients">
+      <h2 class="title">
+        Klienci
+      </h2>
+      <div class="logos">
+        <div class="logo">
+          <img src="./img/client11.png" alt="Klient 01" srcset="">
+        </div>
+        <div class="logo">
+          <img src="./img/client21.png" alt="Klient 02" srcset="">
+        </div>
+        <div class="logo">
+          <img src="./img/client31.png" alt="Klient 03" srcset="">
+        </div>
+        <div class="logo">
+          <img src="./img/client41.png" alt="Klient 04" srcset="">
+        </div>
+        <div class="logo">
+          <img src="./img/client51.png" alt="Klient 05" srcset="">
+        </div>
+        <div class="logo">
+          <img src="./img/client62.png" alt="Klient 06" srcset="">
+        </div>
+      </div>
+    </section>
   </main>
   <footer>
-    Footer
+    <div class="nav">
+      <div>
+        <img src="./img/logo2.png" alt="Logo firmy">
+        <img src="./img/name2.png" alt="Emblemat firmy">
+      </div>
+      <div>
+        <ul class="">
+          <li>Start</li>
+          <li>Strony WWW</li>
+          <li>Adwords</li>
+          <li>Pozycjonowanie</li>
+          <li>Kontakt</li>
+        </ul>
+      </div>
+    </div>
   </footer>
   
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

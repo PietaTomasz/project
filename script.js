@@ -1,6 +1,6 @@
 $("#slideshow > div:gt(0)").hide();
 
-setInterval(function() { 
+setInterval(function() {
   $('#slideshow > div:first')
     .fadeOut(1000)
     .next()
@@ -9,14 +9,14 @@ setInterval(function() {
     .appendTo('#slideshow');
 },  3000);
 
-var yourNavigation = $(".notsticky");
-    stickyDiv = "sticky";
-    yourHeader = $('header').height();
+let nav = $(".nav");
+    sticky = "sticky";
+    header = $('header').height();
 
 $(window).scroll(function() {
-  if( $(this).scrollTop() > yourHeader ) {
-    yourNavigation.addClass(stickyDiv);
+  if( $(this).scrollTop() > header ) {
+    nav.addClass(sticky);
   } else {
-    yourNavigation.removeClass(stickyDiv);
+    nav.removeClass(sticky);
   }
 });

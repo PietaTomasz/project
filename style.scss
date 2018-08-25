@@ -1,18 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,400i,700&subset=latin-ext');
-$orange: #ff6600;
-$grey: rgba(120, 120, 120, 255);
+@import 'style/promo.scss';
 
-@media only screen and (max-width: 1024px) {
-    .menu {
-      visibility: hidden;
-    }    
+
+$orange: rgba(255,100,0, 1);
+$grey: rgba(120, 120, 120, 255);
+$silver: rgba(70, 70, 70, 255);
+$blue: rgba(251, 251, 251, 1);
+
+%grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 * {
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
   text-align: center;
-  transition: all 0.3s;
+  transition: all 0.2s;
   user-select: none;
 }
 body, html {
@@ -21,53 +25,42 @@ body, html {
   font-size: 11px;
   overflow-x: hidden;
 }
-
 a:link, a:visited a:hover, a:active {
   text-decoration: none;
   color: black;
 }
-section, main, footer {
-  margin-bottom: 2rem;
-}
 .nav {
-  display: grid;
-  grid-template-columns: 50% 50%;
+  @extend %grid;
   text-transform: uppercase;
   position: relative; 
 }
 .sticky {
-  position:fixed;
-  top:0;
-  background-color: #fff;
-  display: grid;
-  grid-template-columns: 50% 50%;
-  text-transform: uppercase;
-  z-index: 2;
+  position: fixed;
+  background-color: rgba(255,255,255,0.95);
+  z-index: 1;
   width: 100%;
-  border-bottom: 10px solid #000;
+  box-shadow: 0 8px 8px 0px rgba(255, 255, 255, 0.95);
 }
 .menu {
   display: flex;
-  font-size: 1.3vh;  
+  font-size: .9vw;
+
+  li {
+    color: $silver;
+    list-style-type: none;
+    line-height: 7rem;
+    padding: 1.5vw;
+    
+    &:hover,
+    &:nth-child(1) {
+      color: white;
+      background-color: $orange;
+    }
+  }
 }
 .logo {
-  font-size: 3rem;
-  line-height: 5rem;
-  margin-top: 20px;
-}
-.center {
-  text-align: center;
-}
-.menu > li {
-  color: rgba(70, 70, 70, 255);
-  list-style-type: none;
-  line-height: 7rem;
-  padding: 10px;
-  margin: 0;
-  &:hover, &:nth-child(1) {
-    color: white;
-    background-color: $orange;
-  }
+  font-size: 1.8vw;
+  padding-top: 1vw;
 }
 .bold {
   font-weight: 700;
@@ -78,52 +71,53 @@ section, main, footer {
 .orange {
   color: $orange;
 }
-h1, h2 {
+h1,
+h2 {
   width: 60%;
 }
 h2 {
   font-weight: normal;
-  font-size: 3vw;
+  font-size: 5rem;
   margin: 0px auto;
 }
 h1 {
   color: #ff6600;
-  font-size: 6vw;
+  font-size: 6rem;
 }
 .one {
   background-image: url("./img/desk.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  padding: 5rem;
-  height: 100vh;
-  
+  padding-top: 55px;
+  padding-left: 10px;
+  height: 1000px;
 }
-#slideshow { 
-  margin: 50px auto; 
+#slideshow {
   position: relative;
-  left: 0px;
-  bottom: 0px;
-  padding: 10px;
+  top: 485px;
+
+  div {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+  }
 }
-#slideshow > div { 
-  position: absolute; 
-  top: 10px; 
-  left: 10px; 
-  right: 10px; 
-  bottom: 10px; 
-}
-.folio, .passion, .comments, .logos {
+
+.folio, .passion, .comments, .logos, .contact {
   display: flex;
   flex-wrap: wrap;
 }
 .passion, .comments, .logos {
-  max-width: 70vw;
+  max-width: 68vw;
 }
 .box {
   width: 300px;
   height: 426px;
-  padding: 2rem;  
+  padding: 6rem 2rem;
+  background-color: $blue;
 
   img:hover {
     transform: scale(1.2);
@@ -167,12 +161,27 @@ h3 {
     color: $orange;
     border: 5px solid $orange;
   }
+  &:after {
+    content: url('./img/arrow.png');
+  }
+  &:hover:after {
+    content: url('./img/arrows.png');
+  }
+}
+.ex input+span:after {
+  content: url('./img/arrow.png');
+  position: relative;
+  left: -50px;
+}
+.ex input+span:after:hover {
+  content: 'pppp';
+  position: relative;
 }
 .cite {
   width: 370px;
   height: 400px;
   padding: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 .cite > * {
   margin: 20px;
@@ -187,10 +196,6 @@ h3 {
 }
 .left {
   margin-left: 0px;
-}
-.contact {
-  display: flex;
-  flex-wrap: wrap;
 }
 .form {
   width: 500px;
@@ -221,11 +226,11 @@ input {
 .clients {
   opacity: 0.3;
 }
-.logo {
-  margin: 20px;
+.four, .clients {
+  background-color: $blue;
 }
 footer {
-  background-color: #393737;
+  @extend %grid;
   position: relative;
   
   &:before {
@@ -235,13 +240,9 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, .6);
-    transition: opacity .3s;
-    opacity: 1;
-    z-index: 2;
+    background-color: rgba(0, 0, 0, .85);
   }
-
-  .menu {
+  .list {
     color: white;
   }
 }

@@ -33,11 +33,9 @@ h1.promo {
   }
 }
 
-.nav, footer {
+footer {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 50% 50%;
-      grid-template-columns: 50% 50%;
 }
 
 * {
@@ -67,41 +65,75 @@ a:link, a:visited a:hover, a:active {
 }
 
 .nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   text-transform: uppercase;
-  position: relative;
-}
-
-.sticky {
   position: fixed;
   background-color: rgba(255, 255, 255, 0.95);
   z-index: 1;
   width: 100%;
   -webkit-box-shadow: 0 8px 8px 0px rgba(255, 255, 255, 0.95);
           box-shadow: 0 8px 8px 0px rgba(255, 255, 255, 0.95);
+  font-size: 1.6rem;
 }
 
-.menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: .9vw;
+.nav .burger {
+  display: none;
+  width: 100px;
+  height: 100px;
+  background-color: #ff6400;
 }
 
-.menu li {
+@media only screen and (max-width: 900px) {
+  .nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+  .nav div:not(:first-child) {
+    width: 100%;
+    display: none;
+  }
+  .nav .burger {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.nav div {
   color: #464646;
   list-style-type: none;
-  line-height: 7rem;
-  padding: 1.5vw;
+  padding: 1.5rem;
 }
 
-.menu li:hover, .menu li:nth-child(1) {
+.nav div:hover:not(:first-child), .nav div:nth-child(2) {
   color: white;
   background-color: #ff6400;
 }
 
 .logo {
-  font-size: 1.8vw;
-  padding-top: 1vw;
+  font-size: 3rem;
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 900px) {
+  .logo {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .logo {
+    font-size: 2rem;
+  }
 }
 
 .bold {
@@ -143,6 +175,7 @@ h1 {
   padding-top: 55px;
   padding-left: 10px;
   height: 1000px;
+  margin-top: 140px;
 }
 
 .one.home {

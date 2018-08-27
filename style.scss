@@ -11,7 +11,7 @@ $even-grey: rgba(44,44,44,1);
 
 %grid {
   display: grid;
-  grid-template-columns: 50% 50%;
+  // grid-template-columns: 50% 50%;
 }
 * {
   margin: 0 auto;
@@ -20,6 +20,7 @@ $even-grey: rgba(44,44,44,1);
   text-align: center;
   transition: all 0.1s;
   user-select: none;
+  // border: 1px solid #000;
 }
 body, html {
   background-color: #fff;
@@ -32,37 +33,60 @@ a:link, a:visited a:hover, a:active {
   color: black;
 }
 .nav {
-  @extend %grid;
+  // @extend %grid;
+  // grid-template-columns: 40px 50px auto 50px 40px;
+  display: flex;
+  flex-direction: row;
   text-transform: uppercase;
-  position: relative; 
-}
-.sticky {
   position: fixed;
   background-color: rgba(255,255,255,0.95);
   z-index: 1;
   width: 100%;
   box-shadow: 0 8px 8px 0px rgba(255, 255, 255, 0.95);
-}
-.menu {
-  display: flex;
-  font-size: .9vw;
 
-  li {
+  .burger {
+    display: none;
+    width: 100px;
+    height: 100px;
+    background-color: $orange;
+  }
+
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+    width: 100%;
+    div:not(:first-child) {
+      width: 100%;
+      display: none;
+    }
+    .burger {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+  font-size: 1.6rem;
+
+  div {
     color: $silver;
     list-style-type: none;
-    line-height: 7rem;
-    padding: 1.5vw;
-    
-    &:hover,
-    &:nth-child(1) {
+    padding: 1.5rem;
+
+    &:hover:not(:first-child),
+    &:nth-child(2) {
       color: white;
       background-color: $orange;
     }
   }
 }
 .logo {
-  font-size: 1.8vw;
-  padding-top: 1vw;
+  font-size: 3rem;
+  @media only screen and (max-width: 1200px) and (min-width: 900px) {
+    display: none;
+  }
+  @media only screen and (max-width: 600px) {
+    font-size: 2rem;
+  }
 }
 .bold {
   font-weight: 700;
@@ -96,7 +120,7 @@ h1 {
   padding-top: 55px;
   padding-left: 10px;
   height: 1000px;
-  
+  margin-top: 140px;  
 }
 .one.home {
   background-image: url("./img/desk.png");  

@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,400i,700&subset=latin-ext');
-@import 'style/promo.scss';
+@import 'promo';
 
 
 $orange: rgba(255,100,0, 1);
 $grey: rgba(120, 120, 120, 255);
 $silver: rgba(70, 70, 70, 255);
 $blue: rgba(251, 251, 251, 1);
+$odd-grey: rgba(65,65,65,1);
+$even-grey: rgba(44,44,44,1);
 
 %grid {
   display: grid;
@@ -18,6 +20,7 @@ $blue: rgba(251, 251, 251, 1);
   text-align: center;
   transition: all 0.2s;
   user-select: none;
+  border: 1px solid #000;
 }
 body, html {
   background-color: #fff;
@@ -65,6 +68,9 @@ a:link, a:visited a:hover, a:active {
 .bold {
   font-weight: 700;
 }
+.upper {
+  text-transform: uppercase;
+}
 .title {
   margin: 5rem auto;
 }
@@ -84,14 +90,26 @@ h1 {
   color: #ff6600;
   font-size: 6rem;
 }
-.one {
-  background-image: url("./img/desk.png");
+.one {  
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   padding-top: 55px;
   padding-left: 10px;
   height: 1000px;
+  
+}
+.one.home {
+  background-image: url("./img/desk.png");  
+}
+.one.pozy {
+  background-image: url("./img/pozy-logo.png");
+}
+.one.host {
+  background-image: url("./img/hosting-logo.png");
+}
+.one.adword {
+  background-image: url("./img/adword-logo.png");
 }
 #slideshow {
   position: relative;
@@ -106,7 +124,7 @@ h1 {
   }
 }
 
-.folio, .passion, .comments, .logos, .contact {
+.folio, .passion, .comments, .logos, .contact, .pozycjonowanie, .host {
   display: flex;
   flex-wrap: wrap;
 }
@@ -245,4 +263,133 @@ footer {
   .list {
     color: white;
   }
+}
+.pozycjonowanie {
+  width: 100%;
+
+  .box {
+    min-width: 470px;
+    min-height: 440px;
+    padding: 6rem 10rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 10px;
+
+    &:hover {
+      background-color: $orange;
+      color: white;
+    }
+  }
+
+  .odd {
+    background-color: $odd-grey;
+    color: white;
+    
+    div {
+      height: 160px;      
+    }
+
+    .text {
+      padding-top: 26px;
+    }
+  }
+
+  .even {
+    background-color: $even-grey;
+    color: $orange;
+
+    div {
+      height: 160px;
+    }
+  }
+  .text {
+    font-size: 3.2rem;
+  }
+  .number {
+    font-size: 10rem;
+    font-weight: 600;
+  }
+  
+}
+.twoja {
+  position: relative;
+  bottom: 20vw;
+  left: -12vw;
+  font-size: 4rem;
+  color: #cac9c9;
+}
+.host {
+  width: 82vw;
+  justify-content: center;
+
+  .box {
+    width: 180px;
+    height: 450px;
+    background-color: $blue;
+    font-size: 1.8rem;
+    color: $grey;
+    padding: 1.4rem;
+    margin-bottom: 1rem;
+    margin: 2rem 0.5rem;
+
+    &:hover {
+      background-color: $orange;
+      width: 200px;
+      height: 500px;
+      color: black;
+      margin: 0 0.5rem;
+      padding: 3rem 1rem;
+
+      .orange {
+        color: white;
+      }
+      .button {
+        background-color: white;
+        color: $orange; 
+        
+        &:hover {
+          border: 5px solid transparent;
+        }
+        &:after {
+          content: url('./img/arrows.png');
+        }
+      }
+    }
+    .mini01 {
+      width: 60px;
+      text-transform: uppercase;
+    }
+    .mini02 {
+      color: black;
+      font-size: 2.5rem;      
+      font-weight: 600;
+    }
+    .mini03 {
+      font-size: 1.3rem;
+      width: 123px;
+      margin-top: 2rem;
+    }
+    .mini04 {
+      font-size: 4rem;
+    }
+  }
+  .button {
+    width: 152px;
+    height: 42px;
+    line-height: 1.2;
+    margin-top: 1rem;
+  }
+}
+.adopis {
+  max-width: 1000px;
+  font-size: 1.6rem;
+  color: $grey;
+  
+  p {
+    padding: 10px;
+  }
+  .bold {
+    color: black;
+  }
+  margin-bottom: 5rem;
 }

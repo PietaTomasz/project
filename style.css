@@ -46,13 +46,12 @@ h1.promo {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   text-align: center;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  border: 1px solid #000;
 }
 
 body, html {
@@ -421,7 +420,7 @@ footer .list {
   color: #787878;
   padding: 1.4rem;
   margin-bottom: 1rem;
-  margin: 2rem 0.5rem;
+  margin: 3rem 1.5rem;
 }
 
 .host .box:hover {
